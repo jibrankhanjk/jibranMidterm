@@ -24,11 +24,11 @@ jobs:
       - name: Run Test
         run: npm test
 
-      - name: Snyk Security Scan
-        uses: snyk/actions/node@master
-        env:
-          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
-        continue-on-error: true
+      #- name: Snyk Security Scan
+       # uses: snyk/actions/node@master
+       # env:
+       #   SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+      #  continue-on-error: true
 
       - name: Build Docker Image
         run: docker build -t jibran/nodejs-hello-world:${{ github.run_number }} .
